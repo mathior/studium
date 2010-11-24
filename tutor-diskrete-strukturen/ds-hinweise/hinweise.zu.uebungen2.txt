@@ -1,0 +1,30 @@
+* Quellcode WTFs *
+  - Ein .txt mit dem Quellcode drin zu schicken mag gerade noch ok sein (man
+    kann auch gleich .c oder .java als Suffix verwenden). Nicht ok ist, den
+    Quellcode in ein .doc zu packen. Das gibt nächstes Mal Punktabzug.
+
+bitte tackern/binden
+bitte lab/ms mit vermerken, da es unterschiedl. aufgabenstellungen gibt
+Abgaben ohne Namen?!? Srsly?
+namen auf jedes blatt
+
+Blatt 2 Aufg. 4
+Ganz allgemein: bei restklassen gehts immer um ganzzahlen
+Bitte sauber schreiben, gleich und kongruent, (mod n), "folgt aus" und bei Rechenwegen wichtige Teile (Gleichung beidseitig erweitern) nicht auslassen.
+Definition != Satz
+
+2.4.a-c:
+Wenn keine Beweise geführt wurden (Rechenweg!) sondern nur auf den jeweiligen Satz verwiesen wurde, gibt es trotzdem den Punkt.
+(Sätze sind keine Axiome und lassen sich beweisen (und wenn das in der VL gezeigt wurde, sollte es umso einfacher sein)).
+
+2.4.d-e:
+Oft wurden keine direkten Beweise geführt (über Satz 23) sondern die Rechenregeln (Satz 24) korrekt angewendet. Das ist Schade aber prinzipiell ok und gab auch Punkte.
+Achtung lesen: oft wurde die umgekehrte Folgerung gezeigt, nicht die geforderte.
+
+2.4.a:
+Def. 21 führt allgemein den Begriff der Kongruenz zw. zwei Zahlen a,b ein, lässt sich aber nicht heranziehen um die Eigenschaft der Reflexivität (Satz 22) zu beweisen.
+Stattdessen müsste Satz 23 angewendet werden (überführen aus der Restklasse in N) und dort mit Hilfe von "jede Zahl teilt die 0" (n|0 für alle n, gilt immer als direkte Folgerung aus a*0 = 0*a = 0 in den Natürlichen Zahlen) gezeigt werden.
+
+programmieraufgabe:
+- keine sinnlosen kommentare ("//klar, oder?")
+- kein stuss ("dieses programm zerstört sich in wenigen sekunden selbst" - haha, sehr witzig) - gern coole hacks und coderhumor aber kein stuss!

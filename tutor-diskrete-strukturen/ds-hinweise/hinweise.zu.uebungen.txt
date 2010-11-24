@@ -1,0 +1,93 @@
+* Allgemeine Hinweise *
+  - Matrikelnummern bitte auf Übungsblättern mit vermerken.
+  - Bei Gruppenarbeit bitte nur ein Exemplar (mit allen Namen und
+    Matrikelnummern der Gruppe) abgeben.
+
+* Ratschläge *
+  - Es gibt viele Einzelabgaben, versucht bitte noch Gruppen zu bilden. Das
+    entlastet euch (allein sind die ersten Semester vom Arbeitsaufwand her kaum
+    zu schaffen, das ist uns bewusst), ist eine gute Vorbereitung auf spätere
+    Projektarbeit und spart auch Aufwand beim Korrigieren.
+  - Lest die Aufgaben genau. Bsp: ein induktiver Beweis über den Natürlichen
+    Zahlen inkl. 0 sollte auch mit n=0 im Induktionsanfang beginnen.
+
+* Zu einzelnen Aufgaben *
+  Blatt 1, Aufg. 1
+  - Induktive Beweise haben eine Formelle Struktur und sollten bitte auch so
+    notiert werden: Induktionsvorraussetzung, Induktionsanfang,
+    Induktionsbehauptung, Induktionsschritt.
+  - Vollständige Induktion ohne Induktionsanfang ist formal falsch. Diese eine
+    Zeile zu notieren dürfte einen vertretbaren Aufwand darstellen.
+  
+  Blatt 1, Aufg. 1b
+  - Sinn der vollständigen Induktion ist es, von einer Aussage die für n gilt
+    auf eine Aussage über n+1 zu schliessen. Das wurde in keiner (!) der
+    abgegebenen Übungen gemacht, stattdessen wurde die Richtigkeit der Aussage
+    über n+1 bewiesen. Das entsprach jedoch nicht der Aufgabenstellung, daher
+    gab es Punktabzug. Wurde zumindest die formelle Struktur der vollständigen
+    Induktion eingehalten (vor allem der IA notiert) gab es auf die Teilaufgabe
+    trotzdem noch einen Punkt.
+
+  Blatt 1, Aufg. 2
+  - Eine Aussage lässt sich nicht beweisen indem man ein paar Werte einsetzt und
+    zeigt, daß sie damit wahr ist. Es existieren nämlich unendlich viele weitere
+    Zahlen, die man auch einsetzten könnte.
+  
+  Blatt 1, Aufg. 3
+  - Wurde von einigen nicht gemacht. Da wären Punkte ohne viel Arbeit zu holen
+    gewesen.
+  
+  Blatt 1, Aufg. 3b
+  - Viele haben richtig erkannt daß die Anzahl der Funktionen einer Variation
+    mit Zurücklegen entspricht, führen dann aber eine Variable k ein (die
+    typischerweise in Matheunterlagen an der Stelle verwendet wird), ohne
+    festzulegen, wie groß k ist (nämlich 2^n). Das gab einen Punkt Abzug.
+    (2^n)^k ist einfach als Lösung falsch, auch wenn die Begründung stimmt (den
+    Punkt für die Begründung gab es trotzdem).
+
+  Blatt 2, Aufg. 4
+  - Das Einlesen der Hexzahl von der Standardeingabe ist kein Parameter für das
+    Programm. Gemeint war, den Wert als Kommandozeilenparameter zu übergeben.
+    Nur als Hinweis, das gibt keinen Punktabzug.
+
+* Hinweise *
+  zu Quellcode-Abgaben
+  - Bitte Namen in einem Kommentar im Code mit angeben. Bei C/C++ gern auch
+    Kürzel im Filenamen, das erspart das Umbenennen mehrerer quellcode.c Files.
+  - Bitte den Code nicht in die Mail schreiben sondern als Anhang senden, das
+    erhält die Formatierung und erleichtert das Korrigieren, wenn nicht erst
+    editiert werden muss.
+  - Uni-Übungen unterliegen keinem Copyright - schon gar nicht hierzulande und
+    mit falscher Schreibweise, nämlich ohne Angabe des Rechteinhabers. Ihr
+    erhaltet automatisch mit Schaffung eines Werkes das Urheberrecht daran, es
+    bedarf keiner expliziten Auszeichnung. Schreibt lieber eine Zeile mehr
+    sinnvollen Kommentar.
+
+  Java Quellcode
+  - Bitte die Konventionen einhalten, z.B. Klassennamen groß geschrieben,
+    camelCase für Funktionen und Variablen usw. Bitte sauber Formatieren, das
+    erleichtert das Lesen. Wer Eclipse nutzt kann mit Ctrl+Shift+F automatisch
+    formatieren, andere Editoren und IDEs haben solche Funktionen auch.
+  - Java.lang.* muss nicht importiert werden. Imports lassen sich auch in allen
+    IDEs automatisch verwalten (Eclipse: Strg+Shift+O).
+  - Werden Libraries oder Klassen außerhalb der Java-Standard-Lib genutzt, bitte
+    mitsenden. Sonst compiled der Code nicht und es gibt Punktabzug.
+
+  C/C++ Quellcode
+  - Auch hier gilt: bitte den Code sauber formatieren. Welchen Einrückungsstil
+    ihr bevorzugt bleibt euch überlassen aber bleibt bitte konsequent.
+  - Das Shell-Kommando "PAUSE" (C-Code: system("PAUSE");) wurde auf keinem der
+    Rechner der Korrektoren gefunden. Wenn sich eure Kommandozeile immer gleich
+    nach Beendigung des Programmes wieder schliesst, denkt mal darüber nach, sie
+    vielleicht vor dem Start zu öffnen und das Programm von dort auszuführen.
+    Im Ernst: C und C++ Code sollten keine systemspezifischen Befehle verwenden.
+    Der Code muss auf einem beliebigen System compilen und fehlerfrei laufen.
+    Als Baseline kann man hier einen aktuellen GCC (Version 4.4.3) ansehen
+    (sicher nicht der beste Compiler aber ein für jeden verfügbarer Standard).
+  
+* Quellcode WTFs *
+  - "goto" gibt demnächst Punktabzug! Unsere Raketenwissenschaftler haben
+    inzwischen High-Level-Programming-Features wie "Funktionen" entwickelt, die
+    sogar schon in den ersten State-of-the-art-Programmiersprachen verfügbar
+    sein sollen. Wir bitten darum, sie zu nutzen.
+

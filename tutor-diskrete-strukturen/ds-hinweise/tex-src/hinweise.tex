@@ -1,0 +1,318 @@
+%% Dokumentenklasse (Koma Script) -----------------------------------------
+\documentclass[%
+	final, % fertiges Dokument
+	normalheadings, % keine grossen Ueberschriften wie es Standard waere
+	ngerman, % wird an andere Pakete weitergereicht
+	a4paper,
+	1.1headlines, % Zeilenanzahl der Kopfzeilen
+	pagesize, % Schreibt die Papiergroesse in die Datei.
+	halfparskip, % Absaetze getrennt durch halbe Leerzeile, keine Einrueckung
+	pointlessnumbers, % ueberschriftnummerierung ohne Punkt, siehe DUDEN
+	fleqn, % Formeln werden linksbuendig angezeigt
+]{scrartcl} % moegl. Klassen: scrartcl, scrreprt, scrbook
+% -------------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel} % Languagesetting
+%\usepackage{ragged2e} % Besserer Flatternsatz (Linksbuendig, statt Blocksatz)
+\usepackage[]{amsmath} % Amsmath - Mathematik Basispaket
+\usepackage[]{amssymb}
+%\usepackage[T1]{fontenc} % T1 Schrift Encoding (notwendig für die meisten Type 1 Schriften)
+%\usepackage{textcomp}	 % Zusätzliche Symbole (Text Companion font extension)
+%\usepackage{lmodern}
+
+\usepackage[%
+%	dvips,
+%	ps2pdf,
+%	pdfpagelabels,
+]{hyperref}
+
+\hypersetup{
+	breaklinks = {true}, % Links duerfen ueber mehrere Zeilen gehen
+	linktocpage = {false}, % In TOC Seitenzahlen verlinken (true) oder Eintraege
+	pdfborder = {0 0 0} % deaktiviert Border um Links
+}
+
+\begin{document}
+\title{Diskrete Strukturen\\
+       Hinweise zu den Übungen}
+\author{Christian Forler, Christof Bräutigam, Michael Völske\\
+    \texttt{<vorname>.<nachname>@uni-weimar.de}}
+\date{\today}
+\maketitle
+
+\section{Einleitung}
+
+Dieses Dokument ist eine Sammlung von Ideen, die uns beim Korrigieren der
+Übungen zur Vorlesung \textit{Diskrete Strukturen} aufgefallen sind. Es
+enthält Hinweise und Ratschläge allgemeiner Natur sowie Kritiken zu einzelnen
+Aufgaben, oft auch Kriterien zur Punktevergabe. Bevor man sich über die
+Bewertung einer Aufgabe beschwert, empfiehlt es sich also, hier nachzuschauen.
+
+Das Dokument wird regelmäßig mit Einträgen zu den weiteren Übungsblättern
+erweitert, wir bitten darum, ab und zu die neue Version zu ziehen.
+
+Fragen, Kritik und Hinweise zu den Übungsaufgaben werden gern entgegengenommen.
+
+\section{Allgemeine Hinweise}
+
+\begin{itemize}
+    \item Auf jedem Blatt bitte Name, Matrikelnummer und Studiengang
+          vermerken.
+    \item Bei Gruppenarbeit bitte nur ein Exemplar (mit allen Namen und
+          Matrikelnummern der Gruppe) abgeben.
+    \item Bitte die Blätter tackern oder binden
+    \item Wenn es Fragen zu den Übungsaufgaben gibt, schickt einfach eine Mail.
+          Das sollte aber möglichst nicht kurz vor der Abgabe geschehen.
+\end{itemize}
+
+Ein ganz wichtiger Punkt: \textbf{Lest die Aufgaben genau} und behandelt die
+dort gestellten Probleme. Fehler im Aufgabenverständnis führen teilweise zu
+Punktabzug. Einige Beispiele:
+
+\begin{itemize}
+    \item Ein induktiver Beweis über $ \mathbb{N}_0 $ muss auch mit $ n = 0 $
+          im Induktionsanfang beginnen.
+    \item Wenn $ a \Rightarrow b $ gezeigt werden soll, dann soll eben nicht
+          $ b \Rightarrow a $ gezeigt werden und es ist auch nicht nötig
+          $ a \Leftrightarrow b $ zu zeigen - letzteres ist zwar nicht falsch und
+          gibt volle Punktzahl, es ist allerdings auch aufwendiger.
+    \item Wenn eine Programmieraufgabe vorgibt, daß das Programm einen Parameter
+          entgegennehmen soll und dazu ein Beispiel gegeben ist, dann soll es
+          eben keine Eingabe vom Nutzer erwarten. Das führt zu weniger Code,
+          damit zu weniger potentiellen Fehlerquellen und ermöglicht
+          automatisierte Tests auf korrekte Funktion.
+\end{itemize}
+
+Ein Ratschlag: Es gibt viele Einzelabgaben, versucht bitte noch Gruppen zu bilden.
+Das entlastet euch (allein sind die ersten Semester vom Arbeitsaufwand her kaum
+zu schaffen, das ist uns bewusst), ist eine gute Vorbereitung auf spätere
+Projektarbeit und spart auch Aufwand beim Korrigieren.
+
+\section{Hinweise zu Quellcode-Abgaben}
+
+Allgemein gilt: der Quellcode muss auf einem aktuellen frei verfügbaren System
+kompilieren und das Programm i.d.R. mehrere Testcases bestehen.
+Für \textbf{C/C++} benutzen wir den \textbf{gcc 4.4.3}, für \textbf{Java
+javac 1.6.0\_18}. Wer nicht weiss, welche Version er im Einsatz hat, kann diese
+Informationen mit \texttt{gcc -v} bzw. \texttt{javac -version} ermitteln.
+
+Die Quellen werden auf der Kommandozeile kompiliert und ausgeführt, wer mit einer
+IDE entwickelt achtet bitte darauf, daß der Code auch so funktioniert. Wir bewerten
+neben der reinen Funktion auch die korrekte Umsetzung der Aufgabenstellung und
+ziehen Punkte bei schweren stilistischen Mängeln ab.
+
+\begin{itemize}
+    \item Bitte Namen in einem Kommentar im Code mit angeben. Bei C/C++ gern
+          auch Kürzel im Filenamen, das erspart das Umbenennen mehrerer
+          ``\texttt{source.c}''-Files beim sammeln in einem Ordner.
+    \item Bitte den Code nicht in die Mail schreiben sondern als Anhang senden,
+          das erhält die Formatierung. Die Korrektur fällt leichter, wenn
+          nicht erst editiert werden muss.
+    \item Bitte sauber formatieren (konsequent einrücken) und wenn nötig
+          kommentieren. Das erleichtert die Fehlersuche, wenn mal was nicht
+          funktioniert und rettet vielleicht auch bei der Korrektur Punkte.
+    \item Bitte keine fremden Libraries nutzen, keine Nicht-Standard-Funktionen
+          und keine \texttt{system()}-Aufrufe. Das ist für die Bearbeitung der
+          Aufgaben nicht nötig und verhindert im schlimmsten Falle, das der
+          Quellcode compiled.
+    \item Bitte nur Quellcodedateien im Anhang senden, keine Executables.
+          (Es ist schlimm genug, daß die überhaupt durchs Mailsystem der Uni
+          kommen. Abgesehen davon wird an der Professur für
+          \textit{Mediensicherheit} niemand eine .exe aus einem Mailanhang
+          ausführen.)
+\end{itemize}
+
+\subsection{C/C++ Quellcode}
+
+\begin{itemize}
+    \item Zur Formatierung: Welchen Einrückungsstil ihr bevorzugt bleibt euch
+          überlassen aber bleibt bitte konsequent.
+    \item Bitte auf Standardkompatibilität achten. Die Aufgabenstellungen
+          erwähnen nicht umsonst ANSI C/C++. Gerade Visual-C und -C++ schlagen
+          gern Funktionen vor, die nicht überall vorhanden sind. Am besten mit
+          einem \texttt{gcc} und \texttt{-ansi} kompilieren.
+% alles nötige includen!
+\end{itemize}
+
+\subsection{Java Quellcode}
+
+\begin{itemize}
+    \item Bitte die Konventionen einhalten, z.B. Klassennamen groß geschrieben,
+          camelCase für Funktionen und Variablen usw. Bitte sauber Formatieren,
+          das erleichtert das Lesen. Wer Eclipse nutzt kann mit
+          \texttt{Ctrl+Shift+F} automatisch formatieren, andere Editoren und
+          IDEs haben solche Funktionen auch.
+    \item \texttt{Java.lang.*} muss nicht importiert werden. Imports lassen
+          sich auch in allen IDEs automatisch verwalten (z.B. in Eclipse:
+          \texttt{Strg+Shift+O}).
+\end{itemize}
+
+
+\section{Zu einzelnen Aufgaben}
+
+Hier werden der Reihe nach Hinweise zur Bewertung einzelner Aufgaben gegeben und
+häufige Fehler angesprochen.
+
+\subsection{Übungsblatt 1}
+
+\subsubsection{Aufgabe 1}
+
+Induktive Beweise haben eine Formelle Struktur und sollten bitte auch so notiert
+werden: Induktionsvorraussetzung, Induktionsanfang, Induktionsbehauptung,
+Induktionsschritt. Ein strukturiertes Vorgehen hilft auch Fehler zu vermeiden.
+
+Vollständige Induktion ohne Induktionsanfang ist formal falsch, die betreffenden
+Lösungen müssten also streng genommen mit 0 Punkten bewertet werden. Diese eine
+Zeile zu notieren dürfte zudem einen vertretbaren Aufwand darstellen. Wenn der
+IA fehlte wurde ein Punkt abgezogen.
+
+\subsubsection{Aufgabe 1b}
+
+Sinn der vollständigen Induktion ist es, von einer Aussage die für $n$ gilt
+auf eine Aussage über $n+1$ zu schliessen. Das wurde in keiner (!) der
+abgegebenen Übungen gemacht, stattdessen wurde oft die Richtigkeit der
+Aussage über $n+1$ bewiesen, was jedoch nicht der Aufgabenstellung entsprach.
+Daher sind die betreffenden Lösungen streng genommen falsch. Wurde zumindest 
+die formelle Struktur der vollständigen Induktion eingehalten (vor allem der
+IA notiert) gab es auf die Teilaufgabe trotzdem noch einen Punkt.
+
+Besonders auffällig war, das diese Teilaufgabe falsch angegangen wurde, während
+bei Teilaufgabe 1a die Induktion richtig war.
+
+\subsubsection{Aufgabe 2}
+
+Eine Aussage lässt sich nicht beweisen indem man ein paar willkürlich gewählte
+Werte einsetzt und zeigt, daß sie damit wahr ist. Es existieren nämlich
+unendlich viele weitere Zahlen, die man auch einsetzten könnte.
+
+\subsubsection{Aufgabe 3}
+
+Diese Aufgabe wurde von einigen nicht bearbeitet. Da wären Punkte mit etwas
+nachdenken ohne viel Aufwand zu holen gewesen.
+
+\subsubsection{Aufgabe 3b}
+
+Oft wurde richtig erkannt daß die Anzahl der Funktionen einer Variation mit
+Zurücklegen entspricht, dann aber eine Variable $k$ eingeführt (die
+typischerweise in Matheunterlagen an der Stelle verwendet wird), ohne
+festzulegen, wie groß $k$ ist (nämlich $2^n$). Das gab einen Punkt Abzug.
+$(2^n)^k$ ist als Lösung einfach falsch, auch wenn die Begründung stimmt (den
+Punkt für die Begründung gab es trotzdem).
+
+\subsection{Blatt 2}
+
+\subsubsection{Aufgabe 4 allgemein}
+
+Allgemein gilt: Bei der Rechnung in Restklassen geht es immer um ganze Zahlen.
+
+Wir bitten auch um saubere Schrift bei Symbolen: $= und \equiv$ sollten klar
+unterscheidbar sein, $\Rightarrow$ hat genau dieses und kein anderes Symbol usw.
+Bei Rechenwegen bitten wir darum, auch Zwischenschritte (Gleichungen beidseitig
+erweitern u.ä.) zu notieren, das hilft beim Nachvollziehen der Gedankengänge.
+
+Bei Verweisen auf die Unterlagen bitte darauf achten ob auf eine Definition oder
+einen Satz verwiesen wird (das ist nicht das Gleiche).
+
+\subsubsection{Aufgabe 2a}
+Wenn der Rechenweg falsch oder nicht nachvollziehbar war, gab es keinen Punkt,
+auch wenn das Ergebnis stimmte.
+
+% \subsubsection{Aufgabe 2.4.a}
+% Def. 21 führt allgemein den Begriff der Kongruenz zw. zwei Zahlen a,b ein,
+% lässt sich aber nicht heranziehen um die Eigenschaft der Reflexivität (Satz 22)
+% zu beweisen.
+% Stattdessen müsste Satz 23 angewendet werden (überführen aus der Restklasse in
+% $\mathbb{N}$) und dort mit Hilfe von ``jede Zahl teilt die 0'' ($n|0 \forall n$,
+% gilt immer als direkte Folgerung aus $a*0 = 0*a = 0$ in den Natürlichen Zahlen)
+% gezeigt werden.
+
+\subsubsection{Aufgabe 4.a-c}
+Wenn keine Beweise geführt wurden (Rechenweg!) sondern nur auf den jeweiligen
+Satz aus den Vorlesungsunterlagen verwiesen wurde, gibt es trotzdem den Punkt.
+Es lohnt sich aber trotzdem etwas nachzudenken: Sätze sind keine Axiome und
+lassen sich beweisen - und wenn das in der VL gezeigt wurde, sollte es umso
+einfacher sein.
+
+\subsubsection{Aufgabe 4.d-e}
+Oft wurden keine direkten Beweise geführt (über Satz 23) sondern die
+Rechenregeln (Satz 24) korrekt angewendet. Das ist Schade aber prinzipiell ok
+und gab auch Punkte.
+
+Andererseits wurde teilweise die Folgerung in die falsche Richtung gezeigt.
+Bitte die Aufgaben gründlich lesen.
+
+\subsubsection{Aufgabe 5}
+
+Den Nutzer zur Eingabe einer Hexzahl aufzufordern ist kein Parameter für das
+Programm. Gemeint war, den Wert als Kommandozeilenparameter (genauer: als
+Argument) zu übergeben. Wenn das der einzige stilistische Mangel war, gab es
+keinen Punktabzug.
+
+Die Punkte wurden wie folgt verteilt: Wenn der Code nicht kompiliert gibt es
+0 Punkte. 1 Punkt gab es, wenn das Beispiel aus der Aufgabenstellung das
+richtige Ergebnis lieferte, als weiterer Testcase wurde die Quersumme von 
+$123456789abcdef$ berechnet ($120$) um zu kontrollieren ob alle Zweige des
+Programms richtig arbeiten. Weiterhin wurde die Nähe zur Aufgabenstellung
+(Hexwert als Kommandozeilenparameter, Hexwert ist nicht in der Länge
+beschränkt) und der Stil (sauberer Code, kein unnötiger, zu langer, zu
+komplexer Code, kein Systemspezifischer Code) als Kriterium herangezogen.
+
+
+\section{Der kleine Horrorladen}
+\label{wtf}
+
+Hier werden besonders kuriose, kreative (aber nichtsdestotrotz falsche) oder 
+unsinnige Lösungen gezeigt. Dieser Abschnitt ist bitte nicht als Pranger zu
+verstehen (es werden auch keine Namen genannt) sondern als Dokumentation von
+Fehlern, die man besser unterlassen sollte - manchmal lohnt sich auch ein wenig
+Nachdenken darüber, wie es zu dem Fehler kommen konnte oder warum die jeweilige
+Sache eigentlich falsch ist.
+
+\subsection{Rechenaufgaben}
+
+In Restklassen wird nur mit ganzen Zahlen gerechnet. Wie man da auf Idee kommen
+kann, $1/2$ in einer Rechnung einzusetzen, erschliesst sich uns nicht. Vielleicht
+um eine falsche Aussage mit aller Macht doch als wahr zu beweisen...
+
+Wer in der Lage ist, das Konzept des ``Teilers'' in $\mathbb{Q}$ zu erklären,
+schickt bitte eine Mail an uns.
+
+Wenn die Darstellung einer Zahl zur Basis $b$ Ziffern größer oder gleich $b$
+enthält, sollte man sich Gedanken machen.
+
+\subsection{Programmieraufgaben}
+
+\texttt{goto} zum verzweigen in Unterprogramme gibt demnächst 0 Punkte!
+Unsere Raketenwissenschaftler haben inzwischen High-Level-Programming-Features
+(Verzweigungen, Schleifen, gar Funktionen) entwickelt, die sogar schon in den
+ersten State-of-the-art-Programmiersprachen verfügbar sein sollen. Wir bitten
+darum, sie zu nutzen.
+Es gibt nur sehr wenige Fälle in denen \texttt{goto} sinnvoll ist und in den
+Übungen tritt ein solcher Fall sicher nicht auf.
+
+Uni-Übungen unterliegen keinem Copyright - schon gar nicht hierzulande und mit
+falscher Schreibweise, nämlich ohne Angabe des Rechteinhabers. Ihr erhaltet
+automatisch mit Schaffung eines Werkes das Urheberrecht daran, es bedarf
+keiner expliziten Auszeichnung. Darüber hinaus sollte man sich Gedanken
+machen, ob man mit dem, was man da mit seinem Namen versieht, wirklich in
+Verbindung gebracht werden möchte.
+
+Das Shell-Kommando \texttt{PAUSE} (C-Code: \texttt{system("PAUSE");}) wurde auf
+keinem der Rechner der Korrektoren gefunden. Wenn sich eure Kommandozeile immer
+gleich nach Beendigung des Programmes wieder schliesst, denkt mal darüber nach,
+sie vielleicht vor dem Start zu öffnen und das Programm von dort auszuführen.
+
+Ein .txt mit dem Quellcode drin zu schicken mag gerade noch ok sein (man kann
+auch gleich .c oder .java als Suffix verwenden). Nicht ok ist, den Quellcode
+in ein .doc zu packen. Das gibt in Zukunft 0 Punkte.
+
+Sinnlose Kommentare (``\texttt{int quersumme; //klar, oder?}'') und
+Stuss-Ausgaben (``dieses programm zerstört sich in wenigen sekunden selbst...
+*kaboom*'') könnt ihr euch in Zukunft schenken, sonst fangen wir an die Abgaben
+genau so ernst zu nehmen wie die betreffenden Leute ihre Aufgaben. Wir sind
+ganz und gar keine Spaßbremsen, im Gegenteil, wir sehen gern coole Hacks und
+Coderhumor aber Stumpfsinn ist Zeitverschwendung.
+
+\end{document}
+
